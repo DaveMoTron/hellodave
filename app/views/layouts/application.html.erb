@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>HelloDave</title>
+    <title>HelloDave.com - come say hi!</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:500,600,700|Permanent+Marker" rel="stylesheet">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -11,5 +12,12 @@
 
   <body>
     <%= yield %>
+    <nav class="main">
+      <div class="content-wrapper">
+        <%= link_to "My work", work_index_path, class: 'nav-link' %>
+        <%= link_to "About me", "#", class: 'nav-link' %>
+        <%= link_to "Contact", "#", class: 'nav-link' %>
+      </div>
+    </nav>
   </body>
 </html>
