@@ -23,7 +23,11 @@
       &:hover
         background-color: $red
       +mobile-mq(768px)
-        display: none !important        
+        display: none !important
+      &.slick-disabled
+        opacity: .2
+        background-color: rgba(0,0,0,.5)
+        +transform (scale(1))
 
   .portfolio-slide
     background-color: #333
