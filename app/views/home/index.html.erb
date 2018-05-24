@@ -1,16 +1,92 @@
-<section id="section-one" class="homepage-section">
-  <%= image_tag 'spider-web.svg', id: 'spiderweb' %>
-  <%= image_tag 'spider-draft.png', id: 'spider' %>
-  <div class="content-wrapper">
-    <h1 class="main-title">
-      Dave Cruikshank <span class="subtitle">Web Design & Development</span></h1>
-    <p class="body">I'm a designer, developer, illustrator & photographer from Australia.</p>
-    <p class="body">We have lots of spiders here, I think they're pretty cute.</p>
-  </div>
-</section>
-<!-- <section id="section-two" class="homepage-section">
-</section>
-<section id="section-three" class="homepage-section">
-</section>
-<section id="section-four" class="homepage-section">
-</section> -->
+<% content_for :head_block do %>
+  <%= javascript_include_tag 'home', 'data-turbolinks-track': 'reload' %>
+<% end %>
+
+<div id='homepage'>
+  <section id="section-one" class="homepage-section">
+    <%= image_tag 'spider-web.svg', id: 'spiderweb' %>
+    <%= image_tag 'spider.png', id: 'spider' %>
+    <div class='dashed-line one'></div>
+    <div class="content-wrapper">
+      <div class='copy'>
+        <h1 class="main-title">
+          Dave Cruikshank <span class="subtitle">Web Design & Development</span></h1>
+        <p class="body">I'm a designer, developer, illustrator & photographer from Australia.</p>
+        <p class="body">We have lots of spiders here, I think they're pretty cute.</p>
+      </div>
+    </div>
+  </section>
+  <section id="section-two" class="homepage-section">
+    <div class='dashed-line one'></div>
+      <div class='dashed-line two'></div>
+      <div class='dashed-line three'></div>
+      <div class='dave-image-wrapper'>
+        <div class='dave-image'></div>
+        <h3 class='dave-image__title'>
+          Me in India. <span>Also a monkey.</span>
+        </h3>
+      </div>
+    <div class="content-wrapper">
+      <article class='about-me'>
+        <h3>About me</h3>
+        <p>I am an 8 year veteran in web design & development. I have a bachelor of visual communication from the University of South Australia. I enjoy writing beautiful code as much as I love crafting elegant designs. I have worked with some of Australia's biggest corporations, including the ABC and Qantas.</p>
+        <p>I'm very passionate about animal rights and social liberties. In my spare time I dig travel, motorcycle riding, surfing, photography, camping, yoga, volleyball, & lots of other stuff.</p>
+        <div class='about-me__icons'>
+          <div class='icon travel'></div>
+          <div class='icon motorcycle'></div>
+          <div class='icon yoga'></div>
+          <div class='icon photography'></div>
+          <div class='icon volleyball'></div>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section id="section-three" class="homepage-section">
+    <div class="content-wrapper">
+      <div class='dashed-line one'></div>
+      <div class='dashed-line two'></div>
+      <div class='dashed-line three'></div>
+      <div class='copy'>
+        <h3>
+          My skills include
+          <span>( But are not limited to )</span>
+        </h3>
+        <ul>
+          <li><span>HTML5</span>( incl. HAML, erb, slim and more )</li>
+          <li><span>CSS3</span>( incl. SASS, SCSS & LESS and more )</li>
+          <li><span>Javascript</span>( Vanilla & JQuery )</li>
+          <li><span>Ruby & Rails</span>( Front-end focus )</li>
+          <li><span>Graphic Design</span></li>
+          <li><span>UX Design</span></li>
+          <li><span>Photography</span></li>
+          <li><span>Illustration</span></li>
+          <li><%= link_to "View my portfolio", work_index_path, class: "portfolio-button" %></li>
+        </ul>
+      </div>
+      
+    </div>
+  </section>
+  <section id="section-four" class="homepage-section">
+    <div class='dashed-line one'></div>
+    <div class='content-wrapper'>
+      <div class='copy'>
+        <h2 class='title'>Like what you see?<span class='subtitle'>Drop me a line!</span></h2>
+        <ul class='social'>
+          <!-- <li><%= link_to "@davemotron", "#", class: 'social__link twitter' %></li> -->
+          <li><%= link_to "LinkedIn", "https://www.linkedin.com/in/dave-cruikshank", class: 'social__link linkedin' %></li>
+          <li><%= link_to "Phone (click to show)", "#", class: 'social__link phone hidden' %></li>
+          <li><%= link_to "Email (click to show)", "#", class: 'social__link email hidden' %></li>
+        </ul>
+      </div>
+    </div>
+    <div class='daisies-divider'>
+      <div class='daisy'>
+        <%= image_tag "d-stem.png", class: 'stem' %>
+        <%= image_tag "d-petals.png", class: 'petals' %>
+        <%= image_tag "d-eyeball.png", class: 'eyeball' %>
+        <%= image_tag "d-face.png", class: 'face' %>
+      </div>
+    </div>
+    
+  </section>
+</div>

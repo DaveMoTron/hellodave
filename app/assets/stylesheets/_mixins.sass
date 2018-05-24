@@ -1,3 +1,5 @@
+$red: #C72030
+
 =transition($values)
   -o-transition: $values
   -moz-transition: $values
@@ -10,3 +12,89 @@
   -webkit-transform: $values
   -ms-transform: $values
   transform: $values
+
+=animation($values)
+  -webkit-animation: $values
+  -moz-animation: $values
+  animation: $values
+
+=appearance($value)
+  -webkit-appearance: $value
+  -moz-appearance: $value
+  appearance: $value
+=mobile-mq($value: 480px)
+  @media all and (max-width: $value)
+    @content
+
+=button
+  +title-font
+  color: $red
+  font-size: 1.2em
+  text-decoration: none
+  display: inline-block
+  outline: none !important
+  padding: 0px 10px
+  border: 1px dashed $red
+  background-color: rgba(255,255,255,.75)
+  +transition (all 100ms $ease-in-quad)
+  line-height: normal
+  &:hover, &:active
+    background-color: $red
+    border-color: $red
+    border-style: solid
+    color: white
+    +transform (scale(1.1))
+
+=button-black
+  +button
+  background-color: rgba(0,0,0,.5)  
+  text-shadow: 0 1px 2px #000
+  color: white
+  border: 1px dashed #555
+  &:hover, &:active
+    background-color: $red
+    border-color: transparent
+
+
+@-moz-keyframes spin
+  from 
+    -moz-transform: rotate(0deg)
+  to 
+    -moz-transform: rotate(359deg)
+
+@-webkit-keyframes spin
+  from 
+    -webkit-transform: rotate(0deg)
+  to 
+    -webkit-transform: rotate(359deg)
+
+@keyframes spin
+  0% 
+    transform: rotate(0deg)
+  50% 
+    transform: rotate(90deg)
+  0% 
+    transform: rotate(0deg)
+
+
+@-moz-keyframes bob
+  0%
+    transform: translate(0,0)
+  50%
+    transform: translate(0,20px)
+  100%
+    transform: translate(0,0)
+@-webkit-keyframes bob
+  0%
+    transform: translate(0,0)
+  50%
+    transform: translate(0,20px)
+  100%
+    transform: translate(0,0)
+@keyframes bob
+  0%
+    transform: translate(0,0)
+  50%
+    transform: translate(0,20px)
+  100%
+    transform: translate(0,0)

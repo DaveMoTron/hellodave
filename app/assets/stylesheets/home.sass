@@ -7,13 +7,14 @@ body
   margin: 0
   padding: 0
   font-family: "Catamaran", helvetica, sans-serif
-  background: image-url("bg-texture.jpg") repeat 50%
+  background-color: white
+  width: 100vw
+  overflow-x: hidden
 
 p.body
   margin: 0 0 10px
   font-size: 1.2em
   line-height: 1em
-  color: #efefef
 
 h1
   color: $red
@@ -21,112 +22,427 @@ h1
   padding: 5px
   line-height: 1
 
-.homepage-section
-  height: 100vh
-
 .content-wrapper
   +grid-container
   max-width: 1200px
-  padding: 0 20px
+  padding: 0 40px
   margin: 0 auto
   height: inherit
+  box-sizing: border-box
+  +mobile-mq
+    padding: 20px
 
 .column-wrapper
   +grid-container
 
-#section-one
-  background-size: auto 100vh
-  position: relative
-  #spiderweb
-    height: inherit
-    position: absolute
-    top: 0
-    right: 0
-    z-index: 0
-  #spider
-    width: 500px
-    position: absolute
-    top: 5%
-    right: -80px
-    z-index: 1
-  .content-wrapper
-    display: flex
+div#homepage
+  .homepage-section
+    height: 100vh
+    min-height: 100vh
+    overflow: hidden
+    +mobile-mq
+      height: auto
+      padding: 50px 0
+      .dashed-line
+        display: none !important
+
+  .main-title
+    +title-font
+    font-size: 4em
+    color: $red
+    margin: 0 0 20px
+    text-shadow: 0px 1px 1px #000
+    .subtitle
+      font-size: .5em
+      display: block
+    +mobile-mq
+      font-size: 2.8em
+      .subtitle
+        font-size: .6em
+
+  .dashed-line
+    position: absolute    
+    overflow: hidden
+    height: 0
+    width: 0
+    border-style: dashed
+    border-color: white
+  #section-one
+    background: image-url("bg-wall.jpg") repeat 50%
+    background-size: 500px
     position: relative
-    flex-direction: column
-    justify-content: center
-    z-index: 2
+    width: 100vw
+    overflow: hidden
+    z-index: -1
+    .copy
+      width: 100%
+    .dashed-line.one
+      width: 0
+      position: fixed
+      border-width: 0 0 0 2px
+      height: 100vh
+      right: calc(20vw - 14px)
+      // right: calc(20vw + 1px)
+      top: -80vh
+      border-color: #333
+      border-style: solid
+      display: block !important
+      
+    #spiderweb
+      height: inherit
+      position: absolute
+      top: 0
+      right: 0
+      z-index: 0
+      +mobile-mq
+        height: 100%
+    #spider
+      width: 300px
+      position: fixed
+      top: 5%
+      right: 7.5vw
+      right: calc(20vw - 150px)
+      z-index: 1
+      +animation(bob 3s infinite ease-in-out)
+      +mobile-mq
+        width: 150px
+        right: calc(20vw - 82px)
+    .content-wrapper
+      display: flex
+      position: relative
+      align-items: center
+      z-index: 2
+      min-height: 100vh
 
-.main-title
-  +title-font
-  font-size: 4em
-  color: $red
-  margin: 0 0 20px
-  text-shadow: 0px 1px 1px #000
-  .subtitle
-    font-size: .5em
-    display: block
+  #section-two
+    background: $red
+    position: relative
+    +mobile-mq
+      display: flex
+      flex-direction: column-reverse
+      justify-content: center
+      align-items: center
+    
+    .content-wrapper
+      min-height: 100vh
+      +mobile-mq
+        min-height: 0
 
-#section-two
-  background: $red
 
-#section-three
+    .dashed-line.one
+      top: 0
+      right: 20vw
+      height: 80vh
+      border-width: 0 0 0 4px
+    .dashed-line.two
+      top: 80vh
+      right: 20vw
+      width: 60vw
+      border-width: 0 0 4px 0
+    .dashed-line.three
+      top: 80vh
+      left: 20vw
+      height: 20vh
+      border-width: 0 0 0 4px
+    .dave-image-wrapper
+      width: 200px
+      position: absolute
+      right: 20vw
+      margin-right: -100px
+      background: $red
+      top: 33vh
+      padding-top: 20px
+      +mobile-mq
+        position: static
+        margin: 0 auto
+    .dave-image
+      width: 192px
+      height: 192px
+      background: transparent image-url('monkeyonmyback.jpg') no-repeat 50%
+      background-size: cover
+      border-radius: 50%
+      border: 4px solid white
+    .dave-image__title
+      +title-font
+      color: white
+      text-align: center
+      span 
+        display: block
+    article.about-me
+      color: white
+      height: 100%
+      width: 50%
+      position: relative
+      display: flex
+      flex-direction: column
+      justify-content: center
+      z-index: 2
+      +mobile-mq
+        width: 100%
+      h3
+        +title-font
+        font-size: 2em
+        margin: 0 0 10px
+        background-color: $red
+      p
+        background-color: $red
+        margin: 0 0 10px
+    .about-me__icons
+      .icon
+        width: 50px
+        height: 50px
+        display: inline-block
+        background: transparent image-url('about-me-icons.png') no-repeat 0 0
+        background-size: cover
+        margin-right: 5px
+        &.travel
+          background-position: -6px 0
+          width: 66px
+        &.photography
+          background-position: -82px 0
+          width: 49px
+        &.yoga
+          background-position: -139px 0
+          width: 62px
+        &.volleyball
+          background-position: -210px 0
+          width: 41px
+        &.motorcycle
+          background-position: -257px 0
+          width: 56px
 
-#section-four
-  background: black
 
+  #section-three
+    background: $red image-url('federation-falls-web.jpg') no-repeat 50% 50%
+    -webkit-background-size: cover
+    -moz-background-size: cover
+    -o-background-size: cover
+    background-size: cover
+    background-attachment: scroll
+    position: relative
+    .content-wrapper
+      display: flex
+      flex-direction: column
+      justify-content: center
+      +mobile-mq
+        height: 100vh
+    .dashed-line.one
+      top: 0
+      left: 20vw
+      height: 90vh
+      border-width: 0 0 0 4px
+    .dashed-line.two
+      top: 90vh
+      left: 20vw
+      width: 40vw
+      border-width: 0 0 4px 0
+
+    .dashed-line.three
+      top: 90vh
+      right: 40vw
+      height: 10vh
+      border-width: 0 0 0 4px
+    .portfolio-button
+      +button-black
+      margin-top: 15px
+    .copy
+      color: white
+      width: 60vw
+      margin-left: 20vw
+      padding: 0 10px
+      text-shadow: 0 1px 1px rgba(0,0,0,1)
+      h3
+        +title-font
+        font-size: 2em
+        display: inline-block
+        width: auto
+        color: white
+        span  
+          font-size: .55em
+          display: block
+          
+      ul
+        list-style: none
+        margin: 0
+        padding: 0
+        font-size: 1.2em
+        li
+          line-height: 1em
+          margin-bottom: 10px
+
+        li span
+          display: inline-block
+          width: 200px
+          font-weight: bold
+      +mobile-mq
+        width: 100%
+        margin: 0
+        ul li
+          font-size: .9em
+        ul li span
+          display: block
+          font-size: 1.1em
+          margin-bottom: 3px
+
+  #section-four
+    background: #333
+    position: relative
+    overflow: hidden
+    display: flex
+    +mobile-mq
+      flex-direction: column
+      padding: 0
+    .dashed-line.one
+      top: 0
+      right: 40vw
+      height: 100vh
+      border-width: 0 0 0 4px
+      border-left-style: dashed
+      border-color: red
+      z-index: 6
+    .daisies-divider
+      position: relative
+      top: 0
+      right: 0
+      width: calc(40vw + 2px)
+      height: 100vh
+      background: #eff592 image-url('daisies.jpg') no-repeat 50%
+      background-size: cover
+      display: flex
+      justify-content: center
+      align-items: flex-end
+      border: none
+      overflow: hidden
+      +mobile-mq
+        height: 30vh
+        width: 100vw
+        align-items: flex-start
+    .daisy
+      position: relative
+      width: 400px
+      height: 780px
+      @media all and (max-height: 768px)
+        height: 580px
+      .eye-white
+        width: 95px
+        height: 80px
+        background: rgba(255,255,255,.75)
+        position: absolute
+        top: 34px
+        left: 27px
+        border-radius: 30px
+      .stem, .petals, .eyeball, .face
+        width: 100%
+        position: absolute
+        top: 0
+        left: 0
+        z-index: 3
+      .front-leaf
+        width: 50%
+        position: absolute
+        top: 50%
+        right: 15%
+        z-index: 4
+      .back-leaf
+        @extend .front-leaf
+        width: 34%
+        left: 10%
+        z-index: 2
+        top: 55%
+      .petals
+        +animation(spin 8s infinite ease-in-out)
+    .content-wrapper
+      display: flex
+      width: calc(60vw - 4px)
+      padding: 0
+      flex-direction: column
+      align-items: flex-end
+      justify-content: center
+      +mobile-mq
+        height: 70vh
+        width: 100vw
+    .copy
+      color: white
+      text-align: right
+      padding: 0 25px
+      .title
+        +title-font
+        color: white
+        font-size: 2em
+        line-height: 1em
+        margin: 0
+        border-bottom: 4px dashed #555
+        margin: 0 -25px 10px 0 // margin-right to reposition from padding
+        padding: 0 25px 10px
+        .subtitle
+          padding-top: 10px
+          font-size: .8em
+          display: block
+        
+      ul.social 
+        list-style: none
+        padding: 0
+        margin: 0
+        li a
+          display: inline-block
+          line-height: 53px
+          color: white
+          text-decoration: none
+          font-size: 1.1em
+          width: auto
+          padding-right: 60px
+          background: transparent image-url('social-icons.png') no-repeat 100% 0
+          background-size: 50px auto
+          cursor: pointer
+          &.linkedin
+            background-position: 100% -54px
+          &.phone
+            background-position: 100% -108px
+          &.email
+            background-position: 100% -162px
+          &:hover, &:active
+            color: $red
 nav.main
   position: fixed
   width: 100%
   z-index: 10
-  bottom: 0
-  padding: 10px 0 20px
-  border-top: 1px dashed #000
-  background: rgba(255,255,255,.4)
-  .nav-link
+  top: 0
+  left: 30px
+  padding: 10px 0
+  +mobile-mq
+    padding: 0
+  .logotype
     +title-font
-    margin-right: 20px
-    color: $red
-    font-size: 1.2em
-    text-decoration: none
     display: inline-block
-    padding: 5px 10px
-    border: 1px dashed $red
-    +transition (all 100ms $ease-in-quad)
-    &:hover
-      background: $red
-      border-style: solid
-      color: white
-      +transform (scale(1.1))
-
-
-.project__item
-  +grid-column(4)
-  background-color: rgba(255,255,255,.25)
-  border: 1px dashed black
-  box-sizing: border-box
-  padding: 20px
-  text-align: center
-  h2 
-    line-height: 1
-    margin: 0 0 10px
-
-.project__item__image
-  width: 100%
-  height: 200px
-  background-color: rgba(255,255,255,.5)
-
-.project__item__link
-  +title-font
-  margin-right: 20px
-  color: $red
-  font-size: 1.2em
-  text-decoration: none
-  display: inline-block
-  padding: 5px 10px
-  border: 1px dashed $red
-  +transition (all 100ms $ease-in-quad)
-  &:hover
-    background: $red
-    border-style: solid
-    color: white
-    +transform (scale(1.1))
+    font-size: 2em
+    margin: 0 10px 0 0
+    line-height: 1em
+  .nav-link
+    margin-right: 20px
+    +button
+    &.isolated
+      display: inline-block !important
+  .menu-link
+    @extend .nav-link
+    height: 28px
+    width: 18px
+    background: rgba(255,255,255,.35) image-url('hamburger.png') no-repeat 50%
+    background-size: 85%
+    padding: 2px 10px
+    display: none
+    &:hover, &:active
+      background-image: image-url('hamburger-white.png')
+    +mobile-mq(700px)
+      display: inline-block
+  
+  .mobile-nav-wrapper
+    display: block
+    +mobile-mq(700px)
+      display: none
+      background-color: rgba(255,255,255,.85)
+      padding: 10px
+      &.open
+        display: block
+      .nav-link
+        display: block
+        margin: 0 0 5px

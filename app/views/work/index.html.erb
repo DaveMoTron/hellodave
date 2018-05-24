@@ -1,23 +1,85 @@
-<section class='content-wrapper' id='work-index'>
-  <h1>Web portfolio</h1>
-  <div class='column-wrapper'>
-    <article class='project__item'>
-      <h2>Portfolio Item</h2>
-      <div class='project__item__image'></div>
-      <p>A short blurb about the project</p>
-      <%= link_to "Project detail", "#", class: 'project__item__link' %>
-    </article>
-    <article class='project__item'>
-      <h2>Portfolio Item</h2>
-      <div class='project__item__image'></div>
-      <p>A short blurb about the project</p>
-      <%= link_to "Project detail", "#", class: 'project__item__link' %>
-    </article>
-    <article class='project__item'>
-      <h2>Portfolio Item</h2>
-      <div class='project__item__image'></div>
-      <p>A short blurb about the project</p>
-      <%= link_to "Project detail", "#", class: 'project__item__link' %>
-    </article>
+
+
+<article id='portfolio'>
+  <div id='section-one' class='portfolio-section'>
+    <div class='portfolio-slider businest-slider'>
+      <div class='portfolio-slide'>
+        <%= image_tag('businest-a.jpg') %>
+      </div>
+      <div class='portfolio-slide'>
+        <%= image_tag('businest-b.jpg') %>
+      </div>
+      <div class='portfolio-slide'>
+        <%= image_tag('businest-c.png') %>
+      </div>
+      <div class='portfolio-slide'>
+        <%= image_tag('businest-d.jpg') %>
+      </div>
+      <div class='portfolio-slide'>
+        <%= image_tag('businest-e.jpg') %>
+      </div>
+    </div>
+    <div class='slide-title'>
+      <%= link_to "www.businest.com", "https://businest.com", class: 'project-website-link slide-link' %>
+      <%= link_to "Next Project", "#section-two", class: 'next-portfolio-link slide-link scrollable-link', "data-speed": 1500 %>
+    </div>
   </div>
-</section>
+  <div class='section-spacer one'>
+  </div>
+  <div id='section-two' class='portfolio-section'>
+    <div class='portfolio-slider sterling-slider'>
+      <div class='portfolio-slide'>
+        <%= image_tag('sterling-a.jpg') %>
+      </div>
+      <div class='portfolio-slide'>
+        <%= image_tag('sterling-b.jpg') %>
+      </div>
+      <div class='portfolio-slide'>
+        <%= image_tag('sterling-c.jpg') %>
+      </div>
+      <div class='portfolio-slide'>
+        <%= image_tag('sterling-d.jpg') %>
+      </div>
+      <div class='portfolio-slide'>
+        <%= image_tag('sterling-e.jpg') %>
+      </div>
+      <div class='portfolio-slide'>
+        <%= image_tag('sterling-f.jpg') %>
+      </div>
+    </div>
+    <div class='slide-title'>
+      <%= link_to "Sterling Vinyards Mobile App", "https://itunes.apple.com/au/app/sterling-vineyards/id1223207297?mt=8", class: 'project-website-link slide-link' %>
+      <%= link_to "Next Project", "#section-three", class: 'next-portfolio-link slide-link scrollable-link', "data-speed": 1500  %>
+    </div>
+  </div>
+  <div class='section-spacer two'>
+  </div>
+  <div id='section-three' class='portfolio-section'>
+    <div class='portfolio-slider petrescue-slider'>
+      <div class='portfolio-slide'>
+        <%= image_tag('petrescue-a.jpg') %>
+      </div>
+      <div class='portfolio-slide'>
+        <%= image_tag('petrescue-b.jpg') %>
+      </div>
+      <div class='portfolio-slide'>
+        <%= image_tag('petrescue-c.jpg') %>
+      </div>
+      <div class='portfolio-slide'>
+        <%= image_tag('petrescue-d.jpg') %>
+      </div>
+    </div>
+    <div class='slide-title'>
+      <%= link_to "petrescue.com.au", "https://itunes.apple.com/au/app/sterling-vineyards/id1223207297?mt=8", class: 'project-website-link slide-link' %>
+      <%= link_to "Return to top", "#section-one", class: 'next-portfolio-link slide-link scrollable-link', "data-speed": 1500  %>
+    </div>
+  </div>
+  <div class='section-spacer three'>
+  </div>
+</article>
+
+<% content_for :bottom_of_page do %>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <%= javascript_include_tag 'work' %>
+<% end %>
