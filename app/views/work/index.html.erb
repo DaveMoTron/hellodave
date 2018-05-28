@@ -24,6 +24,7 @@
       <%= link_to "Next Project", "#section-two", class: 'next-portfolio-link slide-link scrollable-link' %>
     </div>
   </div>
+  
   <div class='section-spacer one'>
   </div>
   <div id='section-two' class='portfolio-section'>
@@ -78,8 +79,3 @@
   </div>
 </article>
 
-<% content_for :bottom_of_page do %>
-  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-  <%= javascript_include_tag 'work' %>
-<% end %>

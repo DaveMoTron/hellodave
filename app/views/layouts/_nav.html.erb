@@ -5,8 +5,9 @@
       <%= link_to "Home", "#section-one", class: 'nav-link scrollable-link' %>
       <%= link_to "About me", "#section-two", class: 'nav-link scrollable-link' %>
       <%= link_to "Skills", "#section-three", class: 'nav-link scrollable-link' %>
-      <%= link_to "Contact", "#section-four", class: 'nav-link scrollable-link' %>
-      <%= link_to "Portfolio", work_index_path, class: 'nav-link' %>
+      <%= link_to "Portfolio", "#section-four", class: 'nav-link scrollable-link' %>
+      <%= link_to "Contact", "#section-five", class: 'nav-link scrollable-link' %>
+      
     </div>
   <% else %>
     <%= link_to "Home", root_path, class: 'nav-link isolated' %>

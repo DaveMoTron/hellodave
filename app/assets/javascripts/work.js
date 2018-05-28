@@ -1,34 +1,20 @@
 $(document).ready(function(){
-  $('.businest-slider').slick({
-    prevArrow: "<button type='button' class='slick-prev'></button>",
-    nextArrow: "<button type='button' class='slick-next'></button>",
+  $('.portfolio-slider').slick({
+    prevArrow: "<button type='button' class='slick-prev slick-button'></button>",
+    nextArrow: "<button type='button' class='slick-next slick-button'></button>",
     infinite: false,
     dots: true,
-    appendDots: $(this).siblings('.slide-title')
+    appendDots: $('.slide-title')
   });
-  $('.sterling-slider').slick({
-    prevArrow: "<button type='button' class='slick-prev'></button>",
-    nextArrow: "<button type='button' class='slick-next'></button>",
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    infinite: false,
-    dots: true,
-    appendDots: $(this).siblings('.slide-title'),
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1
-        }
-      }
-    ]
-  });
-  $('.petrescue-slider').slick({
-    prevArrow: "<button type='button' class='slick-prev'></button>",
-    nextArrow: "<button type='button' class='slick-next'></button>",
-    dots: true,
-    appendDots: $(this).siblings('.slide-title'),
-    infinite: false
-  });
-});
 
+  $('.portfolio-slider').on('afterChange', function(event, slick, currentSlide, nextSlide){   
+    if(currentSlide <= 4){
+      $('.project-website-link').html('Businest').attr('href', 'https://businest.com');
+    } else if (currentSlide >= 5 && currentSlide <= 10) {
+      $('.project-website-link').html('Sterling Vineyards').attr('href', 'https://itunes.apple.com/au/app/sterling-vineyards/id1223207297?mt=8');
+    } else if (currentSlide => 10) {
+      $('.project-website-link').html('PetRescue').attr('href', 'https://www.petrescue.com.au');
+    }
+  });
+
+});

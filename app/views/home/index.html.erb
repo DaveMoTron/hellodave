@@ -60,13 +60,68 @@
           <li><span>UX Design</span></li>
           <li><span>Photography</span></li>
           <li><span>Illustration</span></li>
-          <li><%= link_to "View my portfolio", work_index_path, class: "portfolio-button" %></li>
         </ul>
       </div>
       
     </div>
   </section>
-  <section id="section-four" class="homepage-section">
+
+  <section id="section-four" class="homepage-section portfolio">
+    <div class='portfolio-section'>
+      <div class='portfolio-slider'>
+        <div class='portfolio-slide businest' data-name='Businest' data-href='https://businest.com'>
+          <%= image_tag('businest-a.jpg') %>
+        </div>
+        <div class='portfolio-slide businest' data-name='Businest' data-href='https://businest.com'>
+          <%= image_tag('businest-b.jpg') %>
+        </div>
+        <div class='portfolio-slide businest'>
+          <%= image_tag('businest-c.png') %>
+        </div>
+        <div class='portfolio-slide businest'>
+          <%= image_tag('businest-d.jpg') %>
+        </div>
+        <div class='portfolio-slide businest'>
+          <%= image_tag('businest-e.jpg') %>
+        </div>
+        <div class='portfolio-slide sterling'>
+          <%= image_tag('sterling-a.jpg') %>
+        </div>
+        <div class='portfolio-slide sterling'>
+          <%= image_tag('sterling-b.jpg') %>
+        </div>
+        <div class='portfolio-slide sterling'>
+          <%= image_tag('sterling-c.jpg') %>
+        </div>
+        <div class='portfolio-slide sterling'>
+          <%= image_tag('sterling-d.jpg') %>
+        </div>
+        <div class='portfolio-slide sterling'>
+          <%= image_tag('sterling-e.jpg') %>
+        </div>
+        <div class='portfolio-slide sterling'>
+          <%= image_tag('sterling-f.jpg') %>
+        </div>
+        <div class='portfolio-slide petrescue'>
+          <%= image_tag('petrescue-a.jpg') %>
+        </div>
+        <div class='portfolio-slide petrescue'>
+          <%= image_tag('petrescue-b.jpg') %>
+        </div>
+        <div class='portfolio-slide petrescue'>
+          <%= image_tag('petrescue-c.jpg') %>
+        </div>
+        <div class='portfolio-slide petrescue'>
+          <%= image_tag('petrescue-d.jpg') %>
+        </div>
+      </div>
+      <div class='slide-title'>
+        <%= link_to "Businest", "https://businest.com", class: 'project-website-link slide-link' %>
+      </div>
+    </div>
+  </section>
+
+  <section id="section-five" class="homepage-section">
     <div class='dashed-line one'></div>
     <div class='content-wrapper'>
       <div class='copy'>
@@ -90,3 +145,8 @@
     
   </section>
 </div>
+
+<% content_for :bottom_of_page do %>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<% end %>

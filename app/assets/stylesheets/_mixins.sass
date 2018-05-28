@@ -26,8 +26,12 @@ $red: #C72030
   @media all and (max-width: $value)
     @content
 
+=retina
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+    @content
+
 =button
-  +title-font
+  +logo-font
   color: $red
   font-size: 1.2em
   text-decoration: none
