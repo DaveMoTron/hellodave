@@ -22,8 +22,14 @@ $red: #C72030
   -webkit-appearance: $value
   -moz-appearance: $value
   appearance: $value
+
 =mobile-mq($value: 480px)
   @media all and (max-width: $value)
+    @content
+  @media (min-device-width: 280px) and (max-device-width: 720px) and (orientation: landscape)
+    @content
+=portrait-mq
+  @media (min-device-width: 280px) and (max-device-width: 720px) and  (orientation: landscape)
     @content
 
 =retina
