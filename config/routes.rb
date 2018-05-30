@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'portfolio/show'
   get 'work/index'
   get 'work/show'
   get 'home/index'

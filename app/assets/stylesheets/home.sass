@@ -195,14 +195,15 @@ h1
   article.about-me
     color: white
     height: 100%
-    width: 50%
     position: relative
     display: flex
     flex-direction: column
     justify-content: center
     z-index: 2
-    +mobile-mq
-      width: 100%
+    .copy 
+      width: 50%
+      +mobile-mq
+        width: 100%
     h3
       +title-font
       font-size: 2em
@@ -211,31 +212,13 @@ h1
       margin: 0 0 10px
       line-height: 1.5em
   .about-me__icons
-    .icon
-      width: 50px
-      height: 50px
-      display: inline-block
-      background: transparent image-url('about-me-icons.png') no-repeat 0 0
-      background-size: cover
-      margin-right: 5px
-      &.travel
-        background-position: -6px 0
-        width: 66px
-      &.photography
-        background-position: -82px 0
-        width: 49px
-      &.yoga
-        background-position: -139px 0
-        width: 62px
-      &.volleyball
-        background-position: -210px 0
-        width: 41px
-      &.motorcycle
-        background-position: -257px 0
-        width: 56px
+    width: 100%
+    max-width: 400px
+    height: auto
 
 #section-three
   background: $red image-url('federation-falls-web.jpg') no-repeat 50% 50%
+  background-image: image-url('skills-background.jpg')
   -webkit-background-size: cover
   -moz-background-size: cover
   -o-background-size: cover
@@ -301,10 +284,12 @@ h1
       li
         line-height: 1em
         margin-bottom: 10px
-
+      li em
+        color: $red
+        font-weight: bold
+        margin: 0 10px
+        text-shadow: none
       li span
-        display: inline-block
-        width: 200px
         font-weight: bold
     +mobile-mq
       width: 100%
@@ -312,9 +297,7 @@ h1
       ul li
         font-size: .9em
       ul li span
-        display: block
         font-size: 1.1em
-        margin-bottom: 3px
 
 #section-four
   position: relative
@@ -372,7 +355,12 @@ h1
     width: 100%
     padding: 20px 30px
     box-sizing: border-box
-    
+    +mobile-mq
+      top: 0
+      bottom: auto
+      flex-direction: row-reverse
+      font-size: .8em 
+  
   .slide-link
     +button
     font-size: 1.2em
@@ -386,8 +374,10 @@ h1
       font-size: 1.8em
       text-align: center
       display: inline-block
-      +mobile-mq(768px)
-        display: none
+      +mobile-mq
+        background-image: none
+        padding: 0 10px
+        
     &.next-portfolio-link
       +button-black
       margin: 7px 0
@@ -399,7 +389,7 @@ h1
     display: flex
     align-items: center
     justify-content: center
-    +mobile-mq
+    +mobile-mq(768px)
       display: none !important
     li
       border-radius: 50%
@@ -572,9 +562,8 @@ h1
           color: $red
 nav.main
   position: fixed
-  width: 100%
   z-index: 10
-  top: 0
+  top: 20px
   left: 30px
   padding: 10px 0
   +mobile-mq
@@ -588,8 +577,6 @@ nav.main
   .nav-link
     margin-right: 20px
     +button
-    &.isolated
-      display: inline-block !important
   .menu-link
     @extend .nav-link
     height: 28px
@@ -600,12 +587,12 @@ nav.main
     display: none
     &:hover, &:active
       background-image: image-url('hamburger-white.png')
-    +mobile-mq(700px)
+    +mobile-mq(768px)
       display: inline-block
   
   .mobile-nav-wrapper
     display: block
-    +mobile-mq(700px)
+    +mobile-mq(768px)
       display: none
       background-color: rgba(255,255,255,.85)
       padding: 10px
