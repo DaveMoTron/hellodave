@@ -1,0 +1,87 @@
+<%= content_for :title, "David Cruikshank Curriculum Vitae" %>
+
+<div class='wrapper'>
+  <div class='title-section'>
+    <h1>Hi <span>I’m</span> Dave</h1>
+    <p>Web designer & developer, illustrator and photographer, and not too hard on the eyes either.</p>
+    <%= link_to "+61 402 428 184", "#", class: 'telephone contact-link' %>
+    <%= link_to "why@hellodave.com.au", "#", class: 'email contact-link' %>
+    <%= link_to "http://www.hellodave.com.au", "http://www.hellodave.com.au", class: 'website contact-link' %>
+    <%= link_to "download resume pdf", "http://www.hellodave.com.au/assets/dcruikshank-resume.pdf", class: 'pdf contact-link' %>
+  </div>
+  <div class='column-one'>
+    <h2 class='profile'>Profile</h2>
+    <p>I am an 8 year veteran in web design & development. I enjoy writing beautiful code as much as I love crafting elegant designs. I have worked with all manner of businesses, from large corporations, to SME’s and startups. I have worked with some of Australia’s largest corporations, including the ABC and Qantas. I am a very social creature and enjoy communicating and engaging with people.</p>
+    <h2 class='skills'>Skill Set</h2>
+    <ul class='skills-list'>
+      <li>
+        <em>HTML5</em><span>/</span> 
+        HAML, SLIM, others
+        <%= render "hearts", h1: "f1", h2: "f2", h3: "f3", h4: "f4", h5: "f5" %>
+      </li>
+      <li>
+        <em>CSS3</em><span>/</span>
+        SASS, SCSS, others
+        <%= render "hearts", h1: "f4", h2: "f1", h3: "f5", h4: "f3", h5: "f2" %>
+      </li>
+      <li>
+        <em>Javascript</em><span>/</span>
+        Vanilla & JQuery
+        <%= render "hearts", h1: "f5", h2: "f4", h3: "f1", h4: "e1", h5: "e2" %>
+      </li> 
+      <li>
+        <em>Ruby & Rails</em><span>/</span>
+        Front-end focus
+        <%= render "hearts", h1: "f2", h2: "f3", h3: "f4", h4: "e4", h5: "e5" %>
+      </li> 
+      <li>
+        <em>Graphic Design</em><span>/</span>
+        Adobe Suite
+        <%= render "hearts", h1: "f5", h2: "f4", h3: "f3", h4: "f2", h5: "f1" %>
+      </li>
+      <li>
+        <em>UX Design</em><span>/</span>
+        Redpen, UXPin
+        <%= render "hearts", h1: "f1", h2: "f1", h3: "f5", h4: "f4", h5: "e3" %>
+      </li>
+      <li>
+        <em>Version Control</em><span>/</span>
+        Git, JIRA
+        <%= render "hearts", h1: "f5", h2: "f1", h3: "f3", h4: "f2", h5: "e1" %>
+      </li> 
+      <li>
+        <em>Illustration</em><span>/</span>
+        Procreate
+        <%= render "hearts", h1: "f1", h2: "f5", h3: "e3", h4: "e2", h5: "e1" %>
+      </li> 
+      <li>
+        <em>Photography</em><span>/</span>
+        Amateur
+        <%= render "hearts", h1: "f3", h2: "f4", h3: "f1", h4: "e5", h5: "e4" %>
+      </li>
+    </ul>
+    <h2 class='formal-ed'>Formal Education</h2>
+    <p class='subject-title'><span>2007-2009</span> University of South Australia
+    <p>Bachelor of Visual Communication (Graphic Design). A 3 year course on the elements of powerful visual design & communication.</p>
+  </div>
+  
+  <div class='column-two'>
+    <h2 class='informal-ed'>Informal Education</h2>
+    <p class='subject-title'><span>2007-now</span> Planet Earth</p>
+    <p>I have attended many conferences on art, design & coding including SXSW, AGIdeas (also as a student ambassador while studying), CSSConf, and RubyConf to name a few. I have studied new web technologies and design trends my whole career.</p>
+  
+  
+    <h2 class='employment'>Employment History</h2>
+    <p class='subject-title'><span>2009-2017</span> reInteractive</p>
+    <p>Front-end developer & designer. Worked as part of a remote, agile team on everything from UX prototyping to  nal valuable product.</p>
+    <p class='subject-title'><span>2003-2009</span> Next Byte Adelaide</p>
+    <p>21C Store Manager. Managed weekends, rosters, inventory & staff.</p>
+
+    <h2 class='personal-interests'>Personal Interests</h2>
+    <p>I’m an adventurer at heart, as I love to experience the new. I love to travel, ride motorcycles, and go camping. I like to play sports and do yoga for  tness and endorphins. I also enjoy a good book, and play the occasional video game.</p>
+  </div>
+</div>
+
+<% content_for :head_block do %>
+  <%= stylesheet_link_tag 'resume' %>
+<% end %>

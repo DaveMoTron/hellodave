@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>HelloDave.com - come say hi!</title>
+    <title><%= yield :title || "HelloDave.com" %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= favicon_link_tag 'favicon.ico' %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Bitter:700|Lato:400,700|Permanent+Marker" rel="stylesheet">
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Bitter:400,700|Lato:400,700|Permanent+Marker" rel="stylesheet">
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= yield :head_block %>
   </head>
 
   <body>
-    <%= render partial: 'layouts/nav' %>
     <%= yield %>
     <%= yield :bottom_of_page %>
   </body>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'resume/show'
   get 'portfolio/show'
   get 'work/index'
   get 'work/show'

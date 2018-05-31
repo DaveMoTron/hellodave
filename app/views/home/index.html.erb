@@ -1,6 +1,8 @@
 <% content_for :head_block do %>
-  <%= javascript_include_tag 'home', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag    'home', media: 'all', 'data-turbolinks-track': 'reload' %>
 <% end %>
+
+<%= render partial: 'layouts/nav' %>
 
 <div id='homepage'>
   <section id="section-one" class="homepage-section">
@@ -146,6 +148,8 @@
 </div>
 
 <% content_for :bottom_of_page do %>
-  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <%= javascript_include_tag "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js", 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag "home.js", 'data-turbolinks-track': 'reload' %>
 <% end %>
