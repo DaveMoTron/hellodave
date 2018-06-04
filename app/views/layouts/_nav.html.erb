@@ -1,15 +1,10 @@
 <nav class="main"> 
-  <% if controller.controller_name == "home" %>
-    <%= link_to "", "#", class: 'menu-link', 'data-menulink': 'nav' %>
-    <div class='mobile-nav-wrapper' data-menu='nav'>
-      <%= link_to "Home", "#section-one", class: 'nav-link scrollable-link' %>
-      <%= link_to "About me", "#section-two", class: 'nav-link scrollable-link' %>
-      <%= link_to "Skills", "#section-three", class: 'nav-link scrollable-link' %>
-      <%= link_to "Portfolio", "#section-four", class: 'nav-link scrollable-link' %>
-      <%= link_to "Contact", "#section-five", class: 'nav-link scrollable-link' %>
-      
-    </div>
-  <% else %>
-    <%= link_to "Home", root_path, class: 'nav-link isolated' %>
-  <% end %>
+  <%= link_to "", "#", class: 'menu-link', 'data-menulink': 'nav' %>
+  <div class='mobile-nav-wrapper' data-menu='nav'>
+    <%= link_to "Home", "#section-one", class: 'nav-link scrollable-link' %>
+    <%= link_to "About me", "#section-two", class: 'nav-link scrollable-link' %>
+    <%= link_to "Skills", "#section-three", class: 'nav-link scrollable-link' %>
+    <%= link_to "Portfolio", "#section-four", class: 'nav-link scrollable-link' %>
+    <%= link_to "Contact", "#section-five", class: 'nav-link scrollable-link' %>
+  </div>
 </nav>

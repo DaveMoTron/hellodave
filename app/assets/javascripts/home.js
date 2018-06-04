@@ -20,7 +20,7 @@ $(document).on('click', '.social__link.hidden', function(e){
   if($(this).hasClass('phone')) {
     $(this).html("+61 402 428 184").attr('href', "tel:+61402428184").removeClass('hidden');
   } else if($(this).hasClass('email')) {
-    $(this).html("davecruikshank@gmail.com").attr('href', 'mailto:davecruikshank@gmail.com').removeClass('hidden');
+    $(this).html("why@hellodave.com.au").attr('href', 'mailto:why@hellodave.com.au').removeClass('hidden');
   };
 });
 
@@ -44,34 +44,21 @@ $(document).ready(function(){
   });
 });
 
-// // Cache selectors
-// var topMenu = $("nav.main .mobile-nav-wrapper"),
-//     topMenuHeight = topMenu.outerHeight()+15,
-//     // All list items
-//     menuItems = topMenu.find(".scrollable-link"),
-//     // Anchors corresponding to menu items
-//     scrollItems = menuItems.map(function(){
-//       var item = $($(this).attr("href"));
-//       if (item.length) { return item; }
-//     });
-
-// // Bind to scroll
-// $(window).scroll(function(){
-//    // Get container scroll position
-//    var fromTop = $(this).scrollTop()+topMenuHeight;
-
-//    // Get id of current scroll item
-//    var cur = scrollItems.map(function(){
-//      if ($(this).offset().top < fromTop)
-//        return this;
-//    });
-//    // Get the id of the current element
-//    cur = cur[cur.length-1];
-//    var id = cur && cur.length ? cur[0].id : "";
-//    // Set/remove active class
-//    menuItems
-//      .parent().removeClass("active")
-//      .end().filter("[href='#"+id+"']").parent().addClass("active");
-// });​
-
-
+$(window).on('scroll', function () {
+   var sections = $('.homepage-section')
+    , nav = $('nav.main')
+    , nav_height = nav.outerHeight()
+    , cur_pos = $(this).scrollTop();
+  sections.each(function() {
+    var top = $(this).offset().top - nav_height,
+        bottom = top + $(this).outerHeight();
+ 
+    if (cur_pos >= top && cur_pos <= bottom) {
+      nav.find('a').removeClass('active');
+      sections.removeClass('active');
+ 
+      $(this).addClass('active');
+      nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('active');
+    }
+  });
+});

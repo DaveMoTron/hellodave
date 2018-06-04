@@ -4,10 +4,10 @@
   <div class='title-section'>
     <h1>Hi <span>I’m</span> Dave</h1>
     <p>Web designer & developer, illustrator and photographer, and not too hard on the eyes either.</p>
-    <%= link_to "+61 402 428 184", "#", class: 'telephone contact-link' %>
-    <%= link_to "why@hellodave.com.au", "#", class: 'email contact-link' %>
+    <%= link_to "+61 402 428 184", "tel:+61402428184", class: 'telephone contact-link' %>
+    <%= link_to "why@hellodave.com.au", "mailto:why@hellodave.com.au", class: 'email contact-link' %>
     <%= link_to "http://www.hellodave.com.au", "http://www.hellodave.com.au", class: 'website contact-link' %>
-    <%= link_to "download resume pdf", "http://www.hellodave.com.au/assets/dcruikshank-resume.pdf", class: 'pdf contact-link' %>
+    <%= link_to "download resume pdf", asset_path("dc-resume.pdf"), class: 'pdf contact-link' %>
   </div>
   <div class='column-one'>
     <h2 class='profile'>Profile</h2>
@@ -46,7 +46,7 @@
       </li>
       <li>
         <em>Version Control</em><span>/</span>
-        Git, JIRA
+        Git, Jira
         <%= render "hearts", h1: "f5", h2: "f1", h3: "f3", h4: "f2", h5: "e1" %>
       </li> 
       <li>
@@ -72,11 +72,12 @@
   
   
     <h2 class='employment'>Employment History</h2>
+    <p class='subject-title'><span>2017-Now</span>DC Design</p>
+    <p>Freelance web design, graphic design, web development.</p>
     <p class='subject-title'><span>2009-2017</span> reInteractive</p>
     <p>Front-end developer & designer. Worked as part of a remote, agile team on everything from UX prototyping to  final valuable product.</p>
     <p class='subject-title'><span>2003-2009</span> Next Byte Adelaide</p>
     <p>21C Store Manager. Managed weekends, rosters, inventory & staff.</p>
-
     <h2 class='personal-interests'>Personal Interests</h2>
     <p>I’m an adventurer at heart, as I love to experience the new. I love to travel, ride motorcycles, and go camping. I like to play sports and do yoga for fitness and endorphins. I also enjoy a good book, and play the occasional video game.</p>
   </div>
