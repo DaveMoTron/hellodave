@@ -32,12 +32,17 @@ ul, ol
   align-self: center
   grid-template-columns: 1fr
   grid-column-gap: 1em
-  box-shadow: 0px 0px 30px rgba(0,0,0,.5)
+  border-bottom: 2px dashed $red
   +min-width($bp1)
+    border: none
     grid-template-columns: 1fr 1fr
+    box-shadow: 0px 0px 30px rgba(0,0,0,.5)
+    margin: 1em auto
   +min-width($bp2)
     grid-template-columns: 1fr 1fr 1fr
-    margin: 1em auto
+  &.pg2
+    border: none
+    
 
 .wrapper > div
   display: flex
@@ -126,7 +131,6 @@ ul, ol
   +min-width($bp2)
     grid-column: 2/3
     padding: 1em
-
 .wrapper .column-two
   padding: 0 1em 50px
   +min-width($bp1)
@@ -136,7 +140,24 @@ ul, ol
     grid-column: 3/4
     padding: 1em
 
-.wrapper .column-one, .wrapper .column-two
+.wrapper.pg2 .column-one
+  +min-width($bp2)
+    grid-column: 1/3
+    padding: 2em
+
+.wrapper.pg2 .column-two
+  background-color: #a3a3a3
+  .dave-desk-img
+    width: 100%
+    max-width: 300px
+  +min-width($bp1)
+    grid-column: 2/3
+  +min-width($bp2)
+    padding: 2em
+    grid-column: 3/4
+    height: 100%
+
+.wrapper .column-one, .wrapper .column-two, .wrapper .column-zero
   align-self: start
   max-width: 100vw
   +min-width($bp1)
@@ -159,7 +180,6 @@ ul, ol
       position: relative
       top: 14.5px
       left: 10px
-
     +min-width(1050px)
       font-size: 1.3em
   .profile:after
@@ -234,6 +254,20 @@ ul, ol
   span
     font-family: inherit
 
-
+.reference-link
+  color: $red
+  line-height: 25px
+  text-decoration: none
+  display: block
+  background: transparent image-url("contact-icons-red.png") no-repeat 0 -1px
+  background-size: 25px auto
+  padding-left: 30px
+  margin: 2px 0
+  +transition(all linear 50ms)
+  transform-origin: left
+  &.email
+    background-position: 0 -50px
+  &:hover, &:active
+    transform: scale(1.05)
 
 

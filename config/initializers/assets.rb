@@ -11,7 +11,7 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.precompile += %w( home.js )
 Rails.application.config.assets.precompile += %w( home.sass )
 Rails.application.config.assets.precompile += %w( resume.sass )
-Rails.application.config.assets.precompile += %w( dc-resume.pdf )
+Rails.application.config.assets.precompile += %w( letterofrecommendation.pdf )
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
